@@ -1,4 +1,3 @@
-#def function that recursively calculates matrix determinant
 def determinant(matrix):
     if len(matrix) == 1:
         return matrix[0][0]
@@ -9,7 +8,6 @@ def determinant(matrix):
         return det
 
 with open("input.txt") as f:
-    #read square matrix from file
     matrix = [list(map(int, line.split())) for line in f]
 
 print(determinant(matrix))
