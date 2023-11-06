@@ -1,18 +1,18 @@
 def linearSearch(list, value):    #O(n)
-    k=0
+    k = 0
     for i in range(len(list)):
-        k+=1
+        k += 1
         if list[i] == value:
             return k
     return -1
 
 def binarySearch(list, value):    #O(log n)
-    k=0
+    k = 0
     list.sort()
     low = 0
     high = len(list) - 1
     while low <= high:
-        k+=1
+        k += 1
         mid = (low + high) // 2
         if list[mid] == value:
             return k
@@ -23,12 +23,12 @@ def binarySearch(list, value):    #O(log n)
     return -1
 
 def interpolation_search(sorted_array, to_find):    #O(log log n) -> O(n)
-    k=0
+    k = 0
     low = 0
     high = len(sorted_array) - 1
 
     while sorted_array[low] < to_find and sorted_array[high] > to_find:
-        k+=1
+        k += 1
         if sorted_array[high] == sorted_array[low]:
             break
 
@@ -56,6 +56,6 @@ with open('input.txt') as f:
     print(l)
     print(lsorted)
     with open('output.txt', 'w') as o:
-        o.write(str(linearSearch(l, 50)) + '\n')
-        o.write(str(binarySearch(lsorted, 50)) + '\n')
-        o.write(str(interpolation_search(lsorted, 50)) + '\n')
+        o.write(str(linearSearch(l, 3)) + '\n')
+        o.write(str(binarySearch(lsorted, 3)) + '\n')
+        o.write(str(interpolation_search(lsorted, 3)) + '\n')

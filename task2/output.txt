@@ -1,0 +1,3 @@
+Average number of comparisons for sequential search: 50.5
+Average number of comparisons for binary search: 5.8
+Average number of comparisons for interpolation search: 0.98
