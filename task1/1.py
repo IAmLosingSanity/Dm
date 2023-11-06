@@ -1,4 +1,4 @@
-def determinant(matrix):
+def determinant(matrix):            #O(n!)
     if len(matrix) == 1:
         return matrix[0][0]
     else:
