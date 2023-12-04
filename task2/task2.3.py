@@ -42,9 +42,9 @@ def interpolation_search(array, element):
             return k
 
     if array[low] == element:
-        return k
+        return k+1
     if array[high] == element:
-        return k
+        return k+1
 
     return -1
 
