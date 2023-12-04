@@ -27,7 +27,7 @@ permutations = list(itertools.permutations(range(1, N + 1)))
 max_compare_count = 0
 arrays_with_max_comparisons = []
 
-# Выполнение сортировки для каждой перестановки и поиск максимального количества сравнений
+# Выполнение сортировки для каждой перестановки и подсчет количества сравнений
 for permutation in permutations:
     compare_count = [0]
     sorted_array = quicksort(list(permutation), compare_count)
@@ -41,3 +41,10 @@ for permutation in permutations:
 with open('output.txt', 'w') as file:
     for array, num_comparisons in arrays_with_max_comparisons:
         file.write(' '.join(map(str, array)) + ' ' + str(num_comparisons) + '\n')
+
+    # Дополнительно сохраняем количество сравнений для всех перестановок
+    file.write('\n')
+    for permutation in permutations:
+        compare_count = [0]
+        quicksort(list(permutation), compare_count)
+        file.write(' '.join(map(str, permutation)) + ' ' + str(compare_count[0]) + '\n')
